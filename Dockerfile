@@ -1,4 +1,13 @@
-# Dùng image chính thức, không cần npm install
 FROM docker.n8n.io/n8nio/n8n
 
+# Thiết lập các biến môi trường (tuỳ chọn)
+ENV N8N_BASIC_AUTH_ACTIVE=true
+ENV N8N_BASIC_AUTH_USER=admin
+ENV N8N_BASIC_AUTH_PASSWORD=yourpassword
+ENV GENERIC_TIMEZONE=Asia/Ho_Chi_Minh
+ENV N8N_ENCRYPTION_KEY=this_is_a_strong_key
+ENV N8N_PORT=5678
+ENV N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
+
+EXPOSE 5678
 CMD ["n8n"]
